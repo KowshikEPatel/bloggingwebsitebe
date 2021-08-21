@@ -13,6 +13,8 @@ const port = process.env.PORT||8000;
 const dbURL = process.env.DB_URL;
 app.use(express.json());
 app.use(cors());
+
+//image handling part
 const conn = mongoose.createConnection(dbURL,{useNewUrlParser: true, useUnifiedTopology: true,useFindAndModify:false})
 let gfs;
 conn.once('open',()=>{
@@ -67,6 +69,7 @@ const upload = multer({storage})
 
   })
 
+  //data handling for routes 
   mongoose
   .connect(dbURL, {
     useNewUrlParser: true,
