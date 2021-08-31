@@ -32,11 +32,11 @@ router.post("/login", async (req, res) => {
         res.status(200).json(others);
       }
       else{
-        res.status(400).json("Wrong credentials!");
+        res.status(400).json({"errorMessage":"Wrong credentials!"});
       }
     }
     else{
-      res.status(400).json("Wrong credentials!");
+      res.status(400).json({"errorMessage":"Wrong credentials!"});
     }
   } catch (err) {
     res.status(500).json(err);
